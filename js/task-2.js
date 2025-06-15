@@ -1,10 +1,11 @@
 function makeArray(firstArray, secondArray, maxLength) {
   const newArray = [];
-  for (let i = 0; i < maxLength; i++) {
+  for (let i = 0; i < (firstArray.length + secondArray.length); i++) {
+  // for (let i = 0; i < maxLength; i++) {
     if (i < firstArray.length) { newArray[i] = firstArray[i]; }
     else { newArray[i] = secondArray[i - firstArray.length]; }
   }
-  return newArray;
+  return newArray.slice(0, maxLength);
 }
 
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
